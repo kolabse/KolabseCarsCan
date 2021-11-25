@@ -9,8 +9,9 @@ class PSACar : public Cars {
 
     public:
         void setCanFilters(MCP2515 &mcp2515);
+        void decodeCanMessage(can_frame canMsg);
     private:
-
+        float roundToTenths(float value);
 };
 
 #endif
