@@ -7,7 +7,6 @@
 ########################################
 
 KolabseCarsCan KEYWORD1
-
 PSACar KEYWORD1
 
 ########################################
@@ -34,7 +33,6 @@ getClimateRightTemp KEYWORD2
 getRecyclingAir KEYWORD2
 getBlowingWindshield KEYWORD2
 getSecAfterStart KEYWORD2
-
 
 ########################################
 # Constants (LITERAL1)
