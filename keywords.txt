@@ -6,34 +6,34 @@
 # Datatypes (KEYWORD1)
 ########################################
 
-KolabseCarsCan  KEYWORD1
+KolabseCarsCan KEYWORD1
 
-PSACar  KEYWORD1
+PSACar KEYWORD1
 
 ########################################
 # Methods and Functions (KEYWORD2)
 ########################################
 
-setCanFilters   KEYWORD2
-setBatteryVoltage   KEYWORD2
+setCanFilters KEYWORD2
+setBatteryVoltage KEYWORD2
 setInstFuelCons KEYWORD2
-setCoolantTemp  KEYWORD2
-setOutdoorTemp  KEYWORD2
-setClimateFanSpeed  KEYWORD2
-setClimateLeftTemp  KEYWORD2
+setCoolantTemp KEYWORD2
+setOutdoorTemp KEYWORD2
+setClimateFanSpeed KEYWORD2
+setClimateLeftTemp KEYWORD2
 setClimateRightTemp KEYWORD2
 setRecyclingAir KEYWORD2
-setBlowingWindshield    KEYWORD2
-getBatteryVoltage   KEYWORD2
+setBlowingWindshield KEYWORD2
+getBatteryVoltage KEYWORD2
 getInstFuelCons KEYWORD2
-getCoolantTemp  KEYWORD2
-getOutdoorTemp  KEYWORD2
-getClimateFanSpeed  KEYWORD2
-getClimateLeftTemp  KEYWORD2
+getCoolantTemp KEYWORD2
+getOutdoorTemp KEYWORD2
+getClimateFanSpeed KEYWORD2
+getClimateLeftTemp KEYWORD2
 getClimateRightTemp KEYWORD2
 getRecyclingAir KEYWORD2
-getBlowingWindshield    KEYWORD2
-getSecAfterStart    KEYWORD2
+getBlowingWindshield KEYWORD2
+getSecAfterStart KEYWORD2
 
 
 ########################################
