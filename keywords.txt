@@ -10,6 +10,9 @@ setClimateLeftTemp	KEYWORD2
 setClimateRightTemp	KEYWORD2
 setRecyclingAir	KEYWORD2
 setBlowingWindshield	KEYWORD2
+setCanFilters	KEYWORD2
+
+decodeCanMessage	KEYWORD2
 
 getBatteryVoltage	KEYWORD2
 getInstFuelCons	KEYWORD2
