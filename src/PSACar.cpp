@@ -38,25 +38,26 @@ void PSACar::setCanFilters(MCP2515 &mcp2515) {
 }
 
 void PSACar::decodeCanMessage(can_frame canMsg) {
+
     if (canMsg.can_id == 0x0E6) {
-      setBatteryVoltage(roundToTenths((canMsg.data[5] + 144) / 20));
+      this->setBatteryVoltage(roundToTenths((canMsg.data[5] + 144) / 20));
     }
 
     if (canMsg.can_id == 0x0F6) {
-      setCoolantTemp(round(canMsg.data[1] - 39));
-      setOutdoorTemp(round(canMsg.data[6] / 2 - 39.5));
+      this->setCoolantTemp(round(canMsg.data[1] - 39));
+      this->setOutdoorTemp(round(canMsg.data[6] / 2 - 39.5));
     }
 
     if (canMsg.can_id == 0x1D0) {
-      setClimateFanSpeed((getClimateFanSpeed() == 16) ? 0 : canMsg.data[2] + 1);
-      setClimateLeftTemp(canMsg.data[5]);
-      setClimateRightTemp(canMsg.data[6]);
-      setRecyclingAir((canMsg.data[4] & 0x020) >> 5);
-      setBlowingWindshield((canMsg.data[4] & 0x010) >> 4);
+      this->setClimateFanSpeed((getClimateFanSpeed() == 16) ? 0 : canMsg.data[2] + 1);
+      this->setClimateLeftTemp(canMsg.data[5]);
+      this->setClimateRightTemp(canMsg.data[6]);
+      this->setRecyclingAir((canMsg.data[4] & 0x020) >> 5);
+      this->setBlowingWindshield((canMsg.data[4] & 0x010) >> 4);
     }
 
     if (canMsg.can_id == 0x221) {
-      setInstFuelCons(roundToTenths(((int)canMsg.data[1] << 8 | canMsg.data[2]) / 10));
+      this->setInstFuelCons(roundToTenths(((int)canMsg.data[1] << 8 | canMsg.data[2]) / 10));
     }
 }
 
