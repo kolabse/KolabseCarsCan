@@ -1,3 +1,6 @@
+/*
+* KolabseCarsCan. Library for storing data about the state of the car and decoding this data from CAN bus messages.
+*/
 #ifndef CAR_DATA
 #define CAR_DATA
 
