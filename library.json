@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/kolabse/KolabseCarsCan.git"
   },
-  "version": "0.50",
+  "version": "0.50.0",
   "frameworks": "arduino",
   "platforms": "*"
 }
