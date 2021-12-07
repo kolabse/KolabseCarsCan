@@ -10,6 +10,7 @@ void Cars::setClimateLeftTemp(int8_t climateLeftTemperature) { _climateLeftTempe
 void Cars::setClimateRightTemp(int8_t climateRightTemperature) { _climateRightTemperature = climateRightTemperature; }
 void Cars::setRecyclingAir(bool recyclingAir) { _recyclingAir = recyclingAir; }
 void Cars::setBlowingWindshield(bool blowingWindshield) { _blowingWindshield = blowingWindshield; }
+void Cars::setSecAfterStart(uint32_t secAfterStart) { _secAfterStart = secAfterStart;}
 
 float Cars::getBatteryVoltage() { return _batteryVoltage; }
 float Cars::getInstFuelCons() { return _instFuelCons; }
@@ -20,4 +21,4 @@ int8_t Cars::getClimateLeftTemp() { return _climateLeftTemperature; }
 int8_t Cars::getClimateRightTemp() { return _climateRightTemperature; }
 bool Cars::getRecyclingAir() { return _recyclingAir; }
 bool Cars::getBlowingWindshield() { return _blowingWindshield; }
-uint32_t Cars::getSecAfterStart() { return millis() / 1000ul; }
+uint32_t Cars::getSecAfterStart() { return _secAfterStart; }

@@ -64,4 +64,3 @@ void PSACar::decodeCanMessage(can_frame canMsg) {
 float PSACar::roundToTenths(float value) {
   return round(value * 10) / 10;
 }
-
