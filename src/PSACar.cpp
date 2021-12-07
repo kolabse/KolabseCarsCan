@@ -20,18 +20,21 @@ void PSACar::setCanFilters(MCP2515 &mcp2515) {
     // Зажигание, яркость подсветки, режим энергосбережения http://autowp.github.io/#036
     mcp2515.setFilter(MCP2515::RXF0, false, 0x036);
 
+    // Тахометр, текущая скорость, одометр, расход топлива http://autowp.github.io/#0B6
+    mcp2515.setFilter(MCP2515::RXF1, false, 0x0B6);
+
     // Скорость вращения колес, напряжение аккумулятора http://autowp.github.io/#0E6
-    mcp2515.setFilter(MCP2515::RXF1, false, 0x0E6);
+    mcp2515.setFilter(MCP2515::RXF2, false, 0x0E6);
 
     // Зажигание, Температура ОЖ, Одометр, Температура ОС, Задний ход, Правый поворотник, Левый поворотник http://autowp.github.io/#0F6
-    mcp2515.setFilter(MCP2515::RXF2, false, 0x0F6);
+    mcp2515.setFilter(MCP2515::RXF3, false, 0x0F6);
 
     // Информация климатческой установки http://autowp.github.io/#1D0
-    mcp2515.setFilter(MCP2515::RXF3, false, 0x1D0);
+    mcp2515.setFilter(MCP2515::RXF4, false, 0x1D0);
+    // http://autowp.github.io/#221
+    mcp2515.setFilter(MCP2515::RXF5, false, 0x221);
 
-    mcp2515.setFilter(MCP2515::RXF4, false, 0x221);
 
-    mcp2515.setFilter(MCP2515::RXF5, false, 0x276);
 
     // Переходим в режим нормальной работы
     mcp2515.setNormalMode();
