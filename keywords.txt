@@ -1,3 +1,4 @@
+KolabseCarsCan	KEYWORD1
 PSACar	KEYWORD1
 car	LITERAL1
 
