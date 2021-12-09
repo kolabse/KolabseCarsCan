@@ -6,7 +6,7 @@
 
 #include <Arduino.h>
 
-class Cars {
+class KolabseCarsCan {
     #define START_VALUE  -99
 
     public:
