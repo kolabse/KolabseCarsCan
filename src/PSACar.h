@@ -3,9 +3,9 @@
 
 #include <Arduino.h>
 #include <mcp2515.h>
-#include "KolabseCarsCan.h"
+#include "AllCars.h"
 
-class PSACar : public KolabseCarsCan {
+class PSACar : public AllCars {
 
     public:
         void setCanFilters(MCP2515 &mcp2515);
