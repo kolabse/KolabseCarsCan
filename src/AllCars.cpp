@@ -12,6 +12,7 @@ void AllCars::setRecyclingAir(bool recyclingAir) { _recyclingAir = recyclingAir;
 void AllCars::setBlowingWindshield(bool blowingWindshield) { _blowingWindshield = blowingWindshield; }
 void AllCars::setSecAfterStart(uint32_t secAfterStart) { _secAfterStart = secAfterStart; }
 void AllCars::setEngineRPM(int8_t engineRPM) { _engineRPM = engineRPM; }
+void AllCars::setCarSpeed(int8_t carSpeed) { _carSpeed = carSpeed; }
 
 float AllCars::getBatteryVoltage() { return _batteryVoltage; }
 float AllCars::getInstFuelCons() { return _instFuelCons; }
@@ -24,3 +25,4 @@ bool AllCars::getRecyclingAir() { return _recyclingAir; }
 bool AllCars::getBlowingWindshield() { return _blowingWindshield; }
 uint32_t AllCars::getSecAfterStart() { return _secAfterStart; }
 int8_t AllCars::getEngineRPM() {return _engineRPM; }
+int8_t AllCars::getCarSpeed() {return _carSpeed; }

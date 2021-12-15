@@ -1,5 +1,11 @@
 /**
- * KolabseCarsCan. Library for storing data about the state of the car and decoding this data from CAN bus messages.
+ * KolabseCarsCan
+ * Storing data about the state of the car and decoding this data from CAN bus messages
+ * This library allows you to decode messages received from CAN-bus and store this info about car state.
+ *
+ * authors:
+ * Kolabse [https://github.com/kolabse]
+ * Sonc [https://github.com/Sonc-man]
  *
  * define CAR_TYPE in your code before include this library
  * CAR_TYPE posible values:

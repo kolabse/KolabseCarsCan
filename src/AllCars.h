@@ -17,6 +17,7 @@ class AllCars {
         void setBlowingWindshield(bool blowingWindshield);
         void setSecAfterStart(uint32_t secAfterStart);
         void setEngineRPM(int8_t engineRPM);
+        void setCarSpeed(int8_t carSpeed);
 
         float getBatteryVoltage();
         float getInstFuelCons();
@@ -29,6 +30,7 @@ class AllCars {
         bool getBlowingWindshield();
         uint32_t getSecAfterStart();
         int8_t getEngineRPM();
+        int8_t getCarSpeed();
 
     private:
         const int startValue    {-99};
@@ -40,11 +42,12 @@ class AllCars {
         int8_t _climateFanSpeed {startValue};                             // Выбранная скорость воздушного потока климатичсеской установки
         int8_t _climateLeftTemperature {startValue};                      // Выбранная температура для левой зоны климатической установки
         int8_t _climateRightTemperature {startValue};                     // Выбранная температура для правой зоны климатической установки
-        uint32_t _secAfterStart;                                           // Секунд после запуска
-        int8_t _engineRPM;                                                 // Обороты двигателя
+        uint32_t _secAfterStart;                                          // Секунд после запуска
+        int8_t _engineRPM;                                                // Обороты двигателя
+        int8_t _carSpeed;                                                 // Скорость автомобиля
 
-        bool _recyclingAir = false;                                        // Актиен режим рециркуляции на климатической установке
-        bool _blowingWindshield = false;                                   // Активен режим обдува ветрового стекла
+        bool _recyclingAir = false;                                       // Актиен режим рециркуляции на климатической установке
+        bool _blowingWindshield = false;                                  // Активен режим обдува ветрового стекла
 };
 
 #endif
