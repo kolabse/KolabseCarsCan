@@ -18,6 +18,10 @@ class AllCars {
         void setSecAfterStart(uint32_t secAfterStart);
         void setEngineRPM(int8_t engineRPM);
         void setCarSpeed(int8_t carSpeed);
+        void setIgnitionMode(int8_t ignitionMode);
+        void setDashboardLightningBrightnessLevel(int8_t dashboardLightningBrightnessLevel);
+        void setEconomyModeIsEnabled(bool economyModeIsEnabled);
+        void setDashboardLightningIsEnabled(bool dashboardLightningIsEnabled);
 
         float getBatteryVoltage();
         float getInstFuelCons();
@@ -31,6 +35,10 @@ class AllCars {
         uint32_t getSecAfterStart();
         int8_t getEngineRPM();
         int8_t getCarSpeed();
+        int8_t getIgnitionMode();
+        int8_t getDashboardLightningBrightnessLevel();
+        bool getEconomyModeIsEnabled();
+        bool getDashboardLightningIsEnabled();
 
     private:
         const int startValue    {-99};
@@ -42,12 +50,17 @@ class AllCars {
         int8_t _climateFanSpeed {startValue};                             // Выбранная скорость воздушного потока климатичсеской установки
         int8_t _climateLeftTemperature {startValue};                      // Выбранная температура для левой зоны климатической установки
         int8_t _climateRightTemperature {startValue};                     // Выбранная температура для правой зоны климатической установки
-        uint32_t _secAfterStart;                                          // Секунд после запуска
         int8_t _engineRPM;                                                // Обороты двигателя
         int8_t _carSpeed;                                                 // Скорость автомобиля
+        int8_t _ignitionMode;
+        int8_t _dashboardLightningBrightnessLevel;
 
-        bool _recyclingAir = false;                                       // Актиен режим рециркуляции на климатической установке
-        bool _blowingWindshield = false;                                  // Активен режим обдува ветрового стекла
+        uint32_t _secAfterStart;                                          // Секунд после запуска
+
+        bool _recyclingAir {false};                                       // Актиен режим рециркуляции на климатической установке
+        bool _blowingWindshield {false};                                  // Активен режим обдува ветрового стекла
+        bool _economyModeIsEnabled {false};
+        bool _dashboardLightningIsEnabled {false};
 };
 
 #endif

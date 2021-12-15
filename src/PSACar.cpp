@@ -45,7 +45,10 @@ void PSACar::decodeCanMessage(can_frame canMsg) {
   switch (canMsg.can_id) {
 
     case 0x036: // BSI Ignition, Dashboard lightning
-
+      this->setEconomyModeIsEnabled(canMsg.data[2] & 0x080);
+      this->setDashboardLightningIsEnabled(canMsg.data[3] & 0x020);
+      this->setDashboardLightningBrightnessLevel(canMsg.data[3] & 0x00f);
+      this->setIgnitionMode(canMsg.data[4] & 0x007);
       break;
 
     case 0x0A4: // Current track name, radiotext

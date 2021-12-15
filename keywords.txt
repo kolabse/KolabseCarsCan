@@ -12,6 +12,13 @@ setClimateRightTemp	KEYWORD2
 setRecyclingAir	KEYWORD2
 setBlowingWindshield	KEYWORD2
 setCanFilters	KEYWORD2
+setSecAfterStart	KEYWORD2
+setEngineRPM	KEYWORD2
+setCarSpeed	KEYWORD2
+setIgnitionMode	KEYWORD2
+setDashboardLightningBrightnessLevel	KEYWORD2
+setEconomyModeIsEnabled	KEYWORD2
+setDashboardLightningIsEnabled	KEYWORD2
 
 decodeCanMessage	KEYWORD2
 
@@ -25,3 +32,9 @@ getClimateRightTemp	KEYWORD2
 getRecyclingAir	KEYWORD2
 getBlowingWindshield	KEYWORD2
 getSecAfterStart	KEYWORD2
+getEngineRPM	KEYWORD2
+getCarSpeed	KEYWORD2
+getIgnitionMode	KEYWORD2
+getDashboardLightningBrightnessLevel	KEYWORD2
+getEconomyModeIsEnabled	KEYWORD2
+getDashboardLightningIsEnabled	KEYWORD2
