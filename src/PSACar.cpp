@@ -42,6 +42,8 @@ void PSACar::setCanFilters(MCP2515 &mcp2515) {
 
 void PSACar::decodeCanMessage(can_frame canMsg) {
 
+  std::map<String, bool> lamps;
+
   switch (canMsg.can_id) {
 
     case 0x036: // BSI Ignition, Dashboard lightning
@@ -78,7 +80,14 @@ void PSACar::decodeCanMessage(can_frame canMsg) {
 
     case 0x0F6: // Ignition, Coolant temperature, Odometer, Outdoor temperature, Reverse gear light, Turn right light, Turn left light
       this->setCoolantTemp(round(canMsg.data[1] - 39));
+      this->setOdometerValue(canMsg.data[2] * 0x010000 + canMsg.data[3] * 0x0100 + canMsg.data[4]);
       this->setOutdoorTemp(round(canMsg.data[6] / 2 - 39.5));
+
+      lamps = this->getLamps();
+      lamps["reverse"] = canMsg.data[7] & 0x080;
+      lamps["leftTurn"] = canMsg.data[7] & 0x002;
+      lamps["rightTurn"] = canMsg.data[7] & 0x001;
+      this->setLamps(lamps);
       break;
 
     case 0x122: // Universal multiplexed panel (Multimedia control)

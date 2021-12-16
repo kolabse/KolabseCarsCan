@@ -2,6 +2,7 @@
 #define ALL_CARS_H
 
 #include <Arduino.h>
+#include <map>
 
 class AllCars {
 
@@ -22,6 +23,8 @@ class AllCars {
         void setDashboardLightningBrightnessLevel(int8_t dashboardLightningBrightnessLevel);
         void setEconomyModeIsEnabled(bool economyModeIsEnabled);
         void setDashboardLightningIsEnabled(bool dashboardLightningIsEnabled);
+        void setOdometerValue(int8_t odometerValue);
+        void setLamps(std::map <String, bool> lamps);
 
         float getBatteryVoltage();
         float getInstFuelCons();
@@ -39,6 +42,8 @@ class AllCars {
         int8_t getDashboardLightningBrightnessLevel();
         bool getEconomyModeIsEnabled();
         bool getDashboardLightningIsEnabled();
+        int8_t getOdometerValue();
+        std::map <String, bool> getLamps();
 
     private:
         const int startValue    {-99};
@@ -54,6 +59,7 @@ class AllCars {
         int8_t _carSpeed;                                                 // Скорость автомобиля
         int8_t _ignitionMode;
         int8_t _dashboardLightningBrightnessLevel;
+        int8_t _odometerValue;
 
         uint32_t _secAfterStart;                                          // Секунд после запуска
 
@@ -61,6 +67,22 @@ class AllCars {
         bool _blowingWindshield {false};                                  // Активен режим обдува ветрового стекла
         bool _economyModeIsEnabled {false};
         bool _dashboardLightningIsEnabled {false};
+
+        std::map <String, bool> _lamps {
+            {"reverse", false},
+            {"leftTurn", false},
+            {"rightTurn", false},
+            {"driverBelt", false},
+            {"doors", false},
+            {"sidelight", false},
+            {"beamLow", false},
+            {"beamHigh", false},
+            {"fogFront", false},
+            {"fogRear", false},
+            {"leftIndcator", false},
+            {"rightIndcator", false},
+            {"fuelLow", false},
+        };
 };
 
 #endif
