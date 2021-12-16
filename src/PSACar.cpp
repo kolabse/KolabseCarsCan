@@ -99,7 +99,18 @@ void PSACar::decodeCanMessage(can_frame canMsg) {
       break;
 
     case 0x128: // Dashboard lights
-
+      lamps = this->getLamps();
+      lamps["driverBelt"] = canMsg.data[0] & 0x040;
+      lamps["doors"] = canMsg.data[1] & 0x010;
+      lamps["sidelight"] = canMsg.data[4] & 0x080;
+      lamps["beamLow"] = canMsg.data[4] & 0x040;
+      lamps["beamHigh"] = canMsg.data[4] & 0x020;
+      lamps["fogFront"] = canMsg.data[4] & 0x010;
+      lamps["fogRear"] = canMsg.data[4] & 0x008;
+      lamps["leftIndcator"] = canMsg.data[4] & 0x004;
+      lamps["rightIndcator"] = canMsg.data[4] & 0x002;
+      lamps["fuelLow"] = canMsg.data[5] >> 7;
+      this->setLamps(lamps);
       break;
 
     case 0x131: // CD changer command
