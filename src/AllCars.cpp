@@ -17,6 +17,7 @@ void AllCars::setIgnitionMode(int8_t ignitionMode) { _ignitionMode = ignitionMod
 void AllCars::setDashboardLightningBrightnessLevel(int8_t dashboardLightningBrightnessLevel) { _dashboardLightningBrightnessLevel = dashboardLightningBrightnessLevel; }
 void AllCars::setEconomyModeIsEnabled(bool economyModeIsEnabled) { _economyModeIsEnabled = economyModeIsEnabled; }
 void AllCars::setDashboardLightningIsEnabled(bool dashboardLightningIsEnabled) { _dashboardLightningIsEnabled = dashboardLightningIsEnabled; }
+void AllCars::setLamps(Lamps lamps) { _lamps = lamps; }
 
 float AllCars::getBatteryVoltage() { return _batteryVoltage; }
 float AllCars::getInstFuelCons() { return _instFuelCons; }
@@ -34,3 +35,4 @@ int8_t AllCars::getIgnitionMode() { return _ignitionMode; }
 int8_t AllCars::getDashboardLightningBrightnessLevel() { return _dashboardLightningBrightnessLevel; }
 bool AllCars::getEconomyModeIsEnabled() { return _economyModeIsEnabled; }
 bool AllCars::getDashboardLightningIsEnabled() { return _dashboardLightningIsEnabled; }
+AllCars::Lamps AllCars::getLamps() { return _lamps; }

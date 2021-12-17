@@ -2,11 +2,27 @@
 #define ALL_CARS_H
 
 #include <Arduino.h>
-#include <map>
 
 class AllCars {
 
     public:
+        struct Lamps
+        {
+            bool reverse        {false};
+            bool leftTurn       {false};
+            bool rightTurn      {false};
+            bool driverBelt     {false};
+            bool doors          {false};
+            bool sidelight      {false};
+            bool beamLow        {false};
+            bool beamHigh       {false};
+            bool fogFront       {false};
+            bool fogRear        {false};
+            bool leftIndcator   {false};
+            bool rightIndcator  {false};
+            bool fuelLow        {false};
+        };
+
         void setBatteryVoltage(float batteryVoltage);
         void setInstFuelCons(float instFuelCons);
         void setCoolantTemp(int8_t coolantTemp);
@@ -24,7 +40,7 @@ class AllCars {
         void setEconomyModeIsEnabled(bool economyModeIsEnabled);
         void setDashboardLightningIsEnabled(bool dashboardLightningIsEnabled);
         void setOdometerValue(int8_t odometerValue);
-        void setLamps(std::map <String, bool> lamps);
+        void setLamps(Lamps lamps);
 
         float getBatteryVoltage();
         float getInstFuelCons();
@@ -43,7 +59,7 @@ class AllCars {
         bool getEconomyModeIsEnabled();
         bool getDashboardLightningIsEnabled();
         int8_t getOdometerValue();
-        std::map <String, bool> getLamps();
+        Lamps getLamps();
 
     private:
         const int startValue    {-99};
@@ -68,21 +84,7 @@ class AllCars {
         bool _economyModeIsEnabled {false};
         bool _dashboardLightningIsEnabled {false};
 
-        std::map <String, bool> _lamps {
-            {"reverse", false},
-            {"leftTurn", false},
-            {"rightTurn", false},
-            {"driverBelt", false},
-            {"doors", false},
-            {"sidelight", false},
-            {"beamLow", false},
-            {"beamHigh", false},
-            {"fogFront", false},
-            {"fogRear", false},
-            {"leftIndcator", false},
-            {"rightIndcator", false},
-            {"fuelLow", false},
-        };
+        Lamps _lamps;
 };
 
 #endif
