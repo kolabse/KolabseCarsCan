@@ -61,6 +61,7 @@ void PSACar::decodeCanMessage(can_frame canMsg) {
     case 0x0B6: // Tachometer, Actual speed, Odometer from start, Fuel consumtion
       this->setEngineRPM(canMsg.data[0] * 0x100 + (canMsg.data[1] >> 3));
       this->setCarSpeed(canMsg.data[2] * 0x100 + canMsg.data[3]);
+      this->setOdometerFromStartValue(canMsg.data[4] * 0x0100 + canMsg.data[5]);
       break;
 
     case 0x0DF: // Display menu

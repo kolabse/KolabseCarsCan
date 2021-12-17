@@ -47,6 +47,7 @@ class AllCars {
         void setEconomyModeIsEnabled(bool economyModeIsEnabled);
         void setDashboardLightningIsEnabled(bool dashboardLightningIsEnabled);
         void setOdometerValue(int8_t odometerValue);
+        void setOdometerFromStartValue(int8_t odometerFromStartValue);
         void setLamps(Lamps lamps);
         void setDoors(Doors doors);
 
@@ -67,6 +68,7 @@ class AllCars {
         bool getEconomyModeIsEnabled();
         bool getDashboardLightningIsEnabled();
         int8_t getOdometerValue();
+        int8_t getOdometerFromStartValue();
         Lamps getLamps();
         Doors getDoors();
 
@@ -85,6 +87,7 @@ class AllCars {
         int8_t _ignitionMode;
         int8_t _dashboardLightningBrightnessLevel;
         int8_t _odometerValue;
+        int8_t _odometerFromStartValue;
 
         uint32_t _secAfterStart;                                          // Секунд после запуска
 
