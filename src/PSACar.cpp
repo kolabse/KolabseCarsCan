@@ -42,6 +42,7 @@ void PSACar::setCanFilters(MCP2515 &mcp2515) {
 
 void PSACar::decodeCanMessage(can_frame canMsg) {
 
+  AllCars::Lamps lamps;
   switch (canMsg.can_id) {
 
     case 0x036: // BSI Ignition, Dashboard lightning
@@ -81,7 +82,6 @@ void PSACar::decodeCanMessage(can_frame canMsg) {
       this->setOdometerValue(canMsg.data[2] * 0x010000 + canMsg.data[3] * 0x0100 + canMsg.data[4]);
       this->setOutdoorTemp(round(canMsg.data[6] / 2 - 39.5));
 
-      AllCars::Lamps lamps;
       lamps = this->getLamps();
       lamps.reverse = canMsg.data[7] & 0x080;
       lamps.leftTurn = canMsg.data[7] & 0x002;
@@ -98,8 +98,6 @@ void PSACar::decodeCanMessage(can_frame canMsg) {
       break;
 
     case 0x128: // Dashboard lights
-
-      AllCars::Lamps lamps;
       lamps = this->getLamps();
       lamps.driverBelt = canMsg.data[0] & 0x040;
       lamps.doors = canMsg.data[1] & 0x010;
