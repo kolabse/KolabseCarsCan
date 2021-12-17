@@ -19,6 +19,7 @@ void AllCars::setEconomyModeIsEnabled(bool economyModeIsEnabled) { _economyModeI
 void AllCars::setDashboardLightningIsEnabled(bool dashboardLightningIsEnabled) { _dashboardLightningIsEnabled = dashboardLightningIsEnabled; }
 void AllCars::setOdometerValue(int8_t odometerValue) { _odometerValue = odometerValue; }
 void AllCars::setLamps(Lamps lamps) { _lamps = lamps; }
+void AllCars::setDoors(Doors doors) { _doors = doors; }
 
 float AllCars::getBatteryVoltage() { return _batteryVoltage; }
 float AllCars::getInstFuelCons() { return _instFuelCons; }
@@ -38,3 +39,4 @@ bool AllCars::getEconomyModeIsEnabled() { return _economyModeIsEnabled; }
 bool AllCars::getDashboardLightningIsEnabled() { return _dashboardLightningIsEnabled; }
 int8_t AllCars::getOdometerValue() { return _odometerValue;}
 AllCars::Lamps AllCars::getLamps() { return _lamps; }
+AllCars::Doors AllCars::getDoors() { return _doors; }

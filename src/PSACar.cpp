@@ -43,6 +43,8 @@ void PSACar::setCanFilters(MCP2515 &mcp2515) {
 void PSACar::decodeCanMessage(can_frame canMsg) {
 
   AllCars::Lamps lamps;
+  AllCars::Doors doors;
+
   switch (canMsg.can_id) {
 
     case 0x036: // BSI Ignition, Dashboard lightning
@@ -173,7 +175,13 @@ void PSACar::decodeCanMessage(can_frame canMsg) {
       break;
 
     case 0x220: // Doors status
-
+      doors = this->getDoors();
+      doors.frontLeft = (canMsg.data[0] & 0x080 ) >> 7;
+      doors.frontRight = (canMsg.data[0] & 0x040 ) >> 6;
+      doors.backLeft = (canMsg.data[0] & 0x020 ) >> 5;
+      doors.backRight = (canMsg.data[0] & 0x010 ) >> 4;
+      doors.trunk = (canMsg.data[0] & 0x008 ) >> 3;
+      this->setDoors(doors);
       break;
 
     case 0x221: // Trip computer info

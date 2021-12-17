@@ -6,8 +6,7 @@
 class AllCars {
 
     public:
-        struct Lamps
-        {
+        struct Lamps {
             bool reverse        {false};
             bool leftTurn       {false};
             bool rightTurn      {false};
@@ -21,6 +20,14 @@ class AllCars {
             bool leftIndcator   {false};
             bool rightIndcator  {false};
             bool fuelLow        {false};
+        };
+
+        struct Doors {
+            bool frontLeft  {false};
+            bool frontRight {false};
+            bool backLeft   {false};
+            bool backRight  {false};
+            bool trunk      {false};
         };
 
         void setBatteryVoltage(float batteryVoltage);
@@ -41,6 +48,7 @@ class AllCars {
         void setDashboardLightningIsEnabled(bool dashboardLightningIsEnabled);
         void setOdometerValue(int8_t odometerValue);
         void setLamps(Lamps lamps);
+        void setDoors(Doors doors);
 
         float getBatteryVoltage();
         float getInstFuelCons();
@@ -60,6 +68,7 @@ class AllCars {
         bool getDashboardLightningIsEnabled();
         int8_t getOdometerValue();
         Lamps getLamps();
+        Doors getDoors();
 
     private:
         const int startValue    {-99};
@@ -85,6 +94,7 @@ class AllCars {
         bool _dashboardLightningIsEnabled {false};
 
         Lamps _lamps;
+        Doors _doors;
 };
 
 #endif
