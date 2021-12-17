@@ -119,6 +119,10 @@ void PSACar::decodeCanMessage(can_frame canMsg) {
 
       break;
 
+    case 0x161: // ??
+
+      break;
+
     case 0x162: // Current disk
 
       break;
