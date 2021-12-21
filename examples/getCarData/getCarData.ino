@@ -9,6 +9,7 @@
  * @date 2021-12-20
  */
 
+// define car type from  CAR_TYPE list
 #define CAR_TYPE 1
 
 #include <SPI.h>
