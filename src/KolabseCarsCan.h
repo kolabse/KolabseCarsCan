@@ -35,4 +35,5 @@ class KolabseCarsCan CAR_CLASS {
 
 };
 
+extern KolabseCarsCan car;
 #endif
