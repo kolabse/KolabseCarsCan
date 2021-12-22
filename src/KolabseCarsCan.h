@@ -27,6 +27,10 @@
 #if CAR_TYPE == 1
     #include "PSACar.h"
     #define CAR_CLASS  : public PSACar
+// COPY and uncomment this part if you added new car decoder
+//#elif CAR_TYPE == 2                           // replace "2" with yours
+//    #include "TemplateCar.h"                  // replace "Template" with yours
+//    #define CAR_CLASS  : public TemplateCar   // replace "Template" with yours
 #else
     #define CAR_CLASS  : public AllCars
 #endif
