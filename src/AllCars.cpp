@@ -21,6 +21,7 @@ void AllCars::setOdometerValue(int8_t odometerValue) { _odometerValue = odometer
 void AllCars::setOdometerFromStartValue(int8_t odometerValue) { _odometerValue = odometerValue; }
 void AllCars::setLamps(Lamps lamps) { _lamps = lamps; }
 void AllCars::setDoors(Doors doors) { _doors = doors; }
+void AllCars::setSystemTime(SystemTime systemTime) { _systemTime = systemTime; }
 
 float AllCars::getBatteryVoltage() { return _batteryVoltage; }
 float AllCars::getInstFuelCons() { return _instFuelCons; }
@@ -42,3 +43,4 @@ int8_t AllCars::getOdometerValue() { return _odometerValue;}
 int8_t AllCars::getOdometerFromStartValue() { return _odometerValue;}
 AllCars::Lamps AllCars::getLamps() { return _lamps; }
 AllCars::Doors AllCars::getDoors() { return _doors; }
+AllCars::SystemTime AllCars::getSystemTime() { return _systemTime; }

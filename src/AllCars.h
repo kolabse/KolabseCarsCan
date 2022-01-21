@@ -30,6 +30,15 @@ class AllCars {
             bool trunk      {false};
         };
 
+        struct SystemTime {
+            bool   is24hFormat  {true};
+            int8_t year         {2000};
+            int8_t month        {1};
+            int8_t day          {1};
+            int8_t hour         {0};
+            int8_t minutes      {0};
+        };
+
         void setBatteryVoltage(float batteryVoltage);
         void setInstFuelCons(float instFuelCons);
         void setCoolantTemp(int8_t coolantTemp);
@@ -50,6 +59,7 @@ class AllCars {
         void setOdometerFromStartValue(int8_t odometerFromStartValue);
         void setLamps(Lamps lamps);
         void setDoors(Doors doors);
+        void setSystemTime(SystemTime systemTime);
 
         float getBatteryVoltage();
         float getInstFuelCons();
@@ -71,6 +81,7 @@ class AllCars {
         int8_t getOdometerFromStartValue();
         Lamps getLamps();
         Doors getDoors();
+        SystemTime getSystemTime();
 
     private:
         const int startValue    {-99};
@@ -98,6 +109,7 @@ class AllCars {
 
         Lamps _lamps;
         Doors _doors;
+        SystemTime _systemTime;
 };
 
 #endif
