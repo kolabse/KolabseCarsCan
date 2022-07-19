@@ -199,7 +199,7 @@ void PSACar::decodeCanMessage(can_frame canMsg) {
       }
 
       if (canMsg.can_dlc == 6) {
-        // if C4 (B3/B5)
+        // if C4 (B7)
       }
 
       break;
